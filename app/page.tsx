@@ -1,94 +1,46 @@
+'use client'
+
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from './page.module.scss'
+import ProjectEntry from './components/ProjectEntry'
+import data from './data/projects.json';
+import { FollowMouseWithTitle } from './components/FollowMouseWithTitle';
+import WebGLCanvas from './components/WebGL/WebGLCanvas';
+import { useState } from 'react';
+import Marquee from 'react-fast-marquee';
+import HamburgerNavigation from '@components/HamburgerNavigation';
+
+
+export interface Title {
+  state: boolean;
+  copy: string
+}
 
 export default function Home() {
+  const projectData = data.projects;
+  const [title, setTitle] = useState<Title>({
+    state: false,
+    copy: 'RNIB'
+  });
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <FollowMouseWithTitle title={title}/>
+      <section className={styles.hero_section}>
+        <WebGLCanvas/>
+        {/* <img src="/palm_tree.png" alt="Render of Palm Tree" /> */}
+        <h1>QuinceGR</h1>
+      </section>
+      <div className={styles.content_container}>
+        <Marquee>
+            <h2>REACTJS (HOOKS + REDUX) | WEBGL | IOS DEVELOPMENT | GRAPHQL &amp; APOLLO | ES6 JAVASCRIPT | DESIGN AND UX | 3D MODELLING | </h2>
+        </Marquee>
+        <section className={styles.content_container__inner}>
+          <h2>Creative Developer</h2>
+          {projectData?.map((project) => (
+            <ProjectEntry setTitle={setTitle} projectData={project}/>
+          ))}
+        </section>
       </div>
     </main>
   )

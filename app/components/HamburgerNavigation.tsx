@@ -1,0 +1,63 @@
+'use client'
+
+import { Fragment, useState } from "react";
+import styles from '../page.module.scss';
+
+const HamburgerNavigation = () => {
+
+    const [isHidden, setHidden] = useState(true);
+
+    const toggleNavigation = (e) => {
+        const element = e.target;
+        console.log(element);
+        setHidden((prevState) => !prevState);
+        setTimeout(() => {
+
+        },50)
+    }
+
+    return (
+        <Fragment>
+        <button 
+        onClick={toggleNavigation} 
+        aria-expanded={isHidden ? false : true}
+        
+        className={`hamburger_cta ${!isHidden ? 'close': null}`}
+        >
+          <img src="/images/svg/rectangle.svg"/>
+          <img src="/images/svg/rectangle.svg"/>
+        </button>
+        <nav role="navigation" className={`${isHidden ? 'hidden': null}`}>
+          <ul className="links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Projects</a></li>
+            <li><a href="/">Contact</a></li>
+          </ul>
+          <ul className="social-media">
+            <li>
+                <a href="https://www.linkedin.com/in/quince-gore-rodney-41b3081b6/">
+                    <img src="/images/svg/linkedin.svg"/>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/channel/UCNzbjdOHAKSBD-3XRIy2QgA/featured">
+                    <img src="/images/svg/youtube.svg"/>
+                </a>
+            </li>
+            <li>
+                <a href="mailto: quince.gorerodney@hotmail.com">
+                    <img src="/images/svg/email.svg"/>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/spikethea">
+                    <img src="/images/svg/github.svg"/>
+                </a>
+            </li>
+          </ul>
+        </nav>
+        </Fragment>
+    )
+}
+
+export default HamburgerNavigation;

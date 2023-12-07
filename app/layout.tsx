@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import './globals.scss'
+import HamburgerNavigation from '@components/HamburgerNavigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>{children}
+      <HamburgerNavigation/>
+        <footer className={inter.className}>
+          <h4>Portfolio created with NextJS and Typescript</h4>
+          <br />
+          <h5>Social Links:</h5>
+          <p>LinkedIn | YouTube | Artstation</p>
+        </footer>
+      </body>
     </html>
   )
 }
