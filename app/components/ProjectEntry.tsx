@@ -2,8 +2,9 @@
 
 import React, { MouseEvent, RefObject, useEffect, useRef, useState } from 'react';
 import styles from '../page.module.scss'
-import { Title } from '../pages/page';
-import Link from 'next/link'
+import { Title } from '../page';
+import Link from 'next/link';
+import { useIntersectionObserver } from 'usehooks-ts'
 
 export interface projectProps {
   projectData: projectData;
@@ -36,7 +37,7 @@ export interface Video {
 const ProjectEntry = ({projectData, setTitle}: projectProps) => {
 
   const [video, setVideo] = useState();
-  const [images, setImages] = useState(projectData.images);
+  const [images, setImages] = useState(projectData.thumbnail_images);
   const imagesRef = useRef([]);
   const titleRef = useRef();
 
@@ -63,8 +64,6 @@ const ProjectEntry = ({projectData, setTitle}: projectProps) => {
     if (!self) return;
 
     const video = ref.current;
-    if (!video) return;
-    console.log(video);
 
     setTitle(prev => ({
       ...prev,
@@ -74,7 +73,6 @@ const ProjectEntry = ({projectData, setTitle}: projectProps) => {
 
     if (video && video.paused) {
       video.play();
-      console.log('video play')
     }
     //triggerImageAnimation(self);
   }
@@ -82,17 +80,12 @@ const ProjectEntry = ({projectData, setTitle}: projectProps) => {
 
 
   const OnProjectLeave = (event: MouseEvent, ref: RefObject<HTMLElement>, videoRef: RefObject<HTMLVideoElement>) => {
-    // const self = event.target as HTMLElement;
-    // if (!self ) return;
-    // console.log(self)
 
     const element = ref.current;
     if (!element) return;
 
     const video = videoRef.current;
     if (!video) return;
-
-    console.log(video)
 
     setTitle(prev => ({
       ...prev,
@@ -121,7 +114,6 @@ const ProjectEntry = ({projectData, setTitle}: projectProps) => {
 
     if (video && !video.paused) {
       video.pause();
-      console.log('video paused!')
     }
   }
 
@@ -147,18 +139,27 @@ const ProjectEntry = ({projectData, setTitle}: projectProps) => {
     const ref = useRef<HTMLElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
 
+    const entry = useIntersectionObserver(ref, {
+      threshold: 0.9
+    });
+
+    useEffect(()=> {
+      
+    }, [entry?.isIntersecting]);
+
     
     if (projectData) {
       const project = projectData
-      const imageArray = project.images;
+      const imageArray = project.thumbnail_images;
       return (
-        <Link href={projectData.name}>
+        <Link href={`/projects/${projectData.name}`}>
         <figure
         ref={ref}
         onMouseMove={(e) => rotateCard(e)}
         onMouseOver={(e) => OnProjectHover(e, projectData, videoRef)}
         onMouseOut={(e) => OnProjectLeave(e, ref, videoRef)}
-        >   
+        >
+          <div className={`${styles.mobile_title} ${entry?.isIntersecting ? '' : `${styles.hidden}`}`}>{projectData.name}</div>  
           <video 
             muted 
             playsInline
@@ -166,12 +167,14 @@ const ProjectEntry = ({projectData, setTitle}: projectProps) => {
             ref={videoRef}
             src={project.video.src}
           ></video>
-          {images.map((image, index) => {
+          {images.map((image, index: number) => {
 
             const {yPos, xPos} = image
             
             return (
               <img
+              key={index}
+              id={`${projectData.name}-image-${index}`}
               data-index={`${image.name}-${index}`}
               style={{bottom: `${yPos}%`, left: `${xPos}%`}}
               className={styles.rnib2} 

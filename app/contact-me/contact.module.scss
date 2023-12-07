@@ -1,0 +1,54 @@
+.contact_me {
+    &__inner {
+        max-width: 90rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+        padding: 4rem 1rem;
+    }
+
+    h1 {
+        color: black;
+        font-size: 10vw;
+    }
+
+    p {
+        margin: auto;
+        max-width: 70rem;
+        font-size: 1.2rem;
+        line-height: 120%;
+    }
+
+    a {
+        color: rgb(25, 25, 175);
+        font-weight: bold;
+    }
+
+    .profile {
+        border-radius: 50%;
+        border: 1px solid black;
+        width: 16rem;
+        height: 16rem;
+        margin: 2rem auto;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    ol {
+        padding: 2rem;
+        border-top: 1px solid black;
+        margin: auto;
+        list-style-type: disc;
+        line-height: 2rem;
+        text-align: start;
+        font-weight: 500;
+    }
+
+}

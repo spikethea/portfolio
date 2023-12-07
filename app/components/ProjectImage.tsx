@@ -11,12 +11,19 @@ const options = {
     threshold: 1
 }
 
-interface projectImageProps {
-    HowManySpaces?: number,
-    isTall?: boolean
+interface ProjectImageData {
+    id: number,
+    src: string,
+    caption?: string,
+    isTall: boolean,
+    howManySpaces: number
 }
 
-const ProjectImage = ({ HowManySpaces, isTall}: projectImageProps) => {
+interface projectImageProps {
+    imageData: ProjectImageData
+}
+
+const ProjectImage = ({imageData}: projectImageProps) => {
     const containerRef = useRef(null);
     const entry = useIntersectionObserver(containerRef, {
         threshold: 0.9
@@ -32,11 +39,11 @@ const ProjectImage = ({ HowManySpaces, isTall}: projectImageProps) => {
         let gridSpaces = '';
         let tall = '';
 
-        if (HowManySpaces) {
-            gridSpaces = ` span-${HowManySpaces}`;
+        if (imageData.howManySpaces) {
+            gridSpaces = ` span-${imageData.howManySpaces}`;
         }
 
-        if (isTall) {
+        if (imageData.isTall) {
             tall = ' tall';
         }
 
@@ -65,12 +72,9 @@ const ProjectImage = ({ HowManySpaces, isTall}: projectImageProps) => {
 
     return (
         <section ref={containerRef} className={determineClassName()}>
-            <img className="bg-image" src={`/efl1.jpg`}/>
+            <img className="bg-image" src={imageData.src}/>
             {/* <h3>England Football Learning</h3> */}
-            <p className={entry?.isIntersecting ? '': 'hidden'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Cras at dolor eu tellus vestibulum porta. Nunc efficitur,
-                orci in fermentum auctor, nibh sapien iaculis orci, eget 
-                ultricies diam nisl id mi. </p>
+            {imageData.caption ? <p className={entry?.isIntersecting ? '': 'hidden'}>{imageData.caption}</p>: null}
         </section>
     )
 }

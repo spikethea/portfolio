@@ -13,7 +13,6 @@ const useMousePosition = () => {
     useEffect(() => {
       const setFromEvent = (e: MouseEvent) => {
         setPosition({ x: e.clientX, y: e.clientY });
-        //console.log(e.screenX);
     };
       window.addEventListener("mousemove", setFromEvent);
       return () => {

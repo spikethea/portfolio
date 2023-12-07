@@ -1,7 +1,6 @@
 'use client'
 
 import { Fragment, useState } from "react";
-import styles from '../page.module.scss';
 
 const HamburgerNavigation = () => {
 
@@ -9,7 +8,6 @@ const HamburgerNavigation = () => {
 
     const toggleNavigation = (e) => {
         const element = e.target;
-        console.log(element);
         setHidden((prevState) => !prevState);
         setTimeout(() => {
 
@@ -31,7 +29,7 @@ const HamburgerNavigation = () => {
           <ul className="links">
             <li><a href="/">Home</a></li>
             <li><a href="/">Projects</a></li>
-            <li><a href="/">Contact</a></li>
+            <li><a href="/contact-me">Contact</a></li>
           </ul>
           <ul className="social-media">
             <li>

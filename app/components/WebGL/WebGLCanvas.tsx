@@ -1,12 +1,11 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import { Canvas, RootState, ThreeElements, useFrame, useLoader, useThree } from '@react-three/fiber'
+import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import SkyBox from './SkyBox'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 import * as THREE from "three";
-import { ARButton } from 'three/examples/jsm/webxr/ARButton.js';
+import { VRButton,  XR } from '@react-three/xr'
 
 function Box(props: any) {
   // This reference will give us direct access to the mesh
@@ -61,7 +60,6 @@ function PalmTree (props: any) {
     ref.current.children[0].castShadow = true;
     ref.current.children[0].receiveShadow = true;
     ref.current.children[0].needsUpdate = true;
-    console.log(ref.current);
   }, [])
 
   return (
@@ -76,16 +74,16 @@ function PalmTree (props: any) {
 function Camera() {
 
   const { camera } = useThree();
-  const rotationFactor = 0.002
+  const rotationFactor = 2;
 
   useFrame((state, delta) => {
-      if (window.scrollY*rotationFactor < Math.PI/4) {
-        camera.rotation.x =  window.scrollY*rotationFactor;
+      if ((window.scrollY / window.innerHeight)*rotationFactor < Math.PI/4) {
+        camera.rotation.x =  (window.scrollY / window.innerHeight)*rotationFactor;
       } else {
         camera.rotation.x = Math.PI/4;
       }
       
-      camera.position.lerp(new THREE.Vector3(0, 4 - window.scrollY* 0.01, 10), 0.02)
+      camera.position.lerp(new THREE.Vector3(0, 4 -( window.scrollY / window.innerHeight)* 8, 10), 0.09)
   });
 
   return (
@@ -98,23 +96,6 @@ export default function WebGLCanvas () {
   const [ vrControllers, setVrControllers ] = useState(null);
   const [XRButton, setXRButton] = useState<HTMLElement>();
 
-  const onCanvasCreated = (data: RootState) => {
-    console.log(data);
-    const gl = data.gl;
-    const scene = data.scene;
-
-    document.body.appendChild(VRButton.createButton(gl));
-    
-    // For Future AR Scene
-        
-    // if (window.innerWidth > 820) {
-    //   setXRButton(VRButton.createButton(gl))
-    // } else {
-    //   setXRButton(ARButton.createButton(gl))
-    // }
-
-    // document.body.appendChild(XRButton);
-  };
 
   useEffect(() => {
     return () => {
@@ -123,10 +104,15 @@ export default function WebGLCanvas () {
   }, [])
 
     return (
+      <>
+        <VRButton
+         onError={(e) => console.error(e)}
+         id='VRButton'
+        />
         <Canvas
         style={{flex: '1'}}
-        onCreated={onCanvasCreated}
         >
+          <XR>
             <Camera/>
             <SkyBox/>
             <ambientLight />
@@ -139,6 +125,8 @@ export default function WebGLCanvas () {
             />
             <Plane/>
             <PalmTree position={[20, -4, 0]} />
+            </XR>
         </Canvas>
+      </>
     )
 }

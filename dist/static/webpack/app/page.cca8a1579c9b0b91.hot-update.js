@@ -1,0 +1,22 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+self["webpackHotUpdate_N_E"]("app/page",{
+
+/***/ "(app-pages-browser)/./app/data/projects.json":
+/*!********************************!*\
+  !*** ./app/data/projects.json ***!
+  \********************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+module.exports = JSON.parse('{"projects":[{"id":0,"name":"rnib-eyeware","tagName":"RNIB: Eyeware 2.0","subtitle":"Employed at Zappar Developing a Mixed Reality Web application for use in the Eyeware 2.0 app for the RNIB.Additionally create a similar, stripped down WebAR version.","description":"Developed a single-page webAR app involved using the three.js implementation of Universal AR library in typescript. Developed a 3D stereoscopic view which allows users to go through a simulation eye conditions in tasks, levels and 360 video. Used html2canvas to create a gaze-controlled UI system which allows the user to navigate through each section and use the app’s features. ","url":"","tags":[{"copy":"WebAR","hexValue":"#03fcc6"},{"copy":"Mixed Reality","hexValue":"#fc03a1"},{"copy":"three.js","hexValue":"#03a1fc"},{"copy":"typescript","hexValue":"#51e943"}],"video":{"name":"rnib-video","alt":"preview of rnib mixed-reality application","src":"/rnib.mp4"},"thumbnail_images":[{"id":0,"name":"rnib-1","src":"/rnib-3.jpg","xPos":68,"yPos":52},{"id":1,"name":"rnib-2","src":"/rnib-2.jpg","xPos":12,"yPos":0}],"images":[{"id":0,"src":"/rnib-1.jpg","caption":"The Mixed reality experience begins with a tutorial, teaching the user how to point with the Gaze control UI.","isTall":false,"howManySpaces":2},{"id":0,"src":"/rnib-2.jpg","caption":"","isTall":false,"howManySpaces":1},{"id":1,"src":"/rnib-3.jpg","caption":"","isTall":false,"howManySpaces":1}]},{"id":1,"name":"eflearning","tagName":"England Football Learning","description":"While at cognizant, I built the UI for the new England Football Learning Website, a CMS for England Football coaching. Built using the Fractal UI framework + ES6 Javascript (with webpack) and SCSS, it greatly improved upon the existing B2C experience, and won Cognizant UK\'s Project of the Year in the communications Sector. Over the course of this project, I implemented new design systems, a profile biography UI, and advocated for as SVG animation library Rive.","url":"https://learn.englandfootball.com/","tags":[{"copy":"Vanilla JS","hexValue":"#f7c80a"},{"copy":"SCSS","hexValue":"#750af7"},{"copy":"WebRTC","hexValue":"#f71a0a"},{"copy":"Webpack","hexValue":"#0a6df7"},{"copy":"Handlebars","hexValue":"#80eb34"}],"video":{"name":"efl-video","alt":"screen recording of england football learning website","src":"/efl.mp4"},"thumbnail_images":[{"id":0,"name":"efl-1","src":"/efl1.jpg","xPos":12,"yPos":30},{"id":1,"name":"efl-2","src":"/efl2.png","xPos":50,"yPos":0}],"images":[{"id":0,"src":"/efl-homepage.png","caption":"The Hero section of EFL Homepage. Used Glide.js to create sliders and carousels to display CMS content. Customised to fit the EFL design language and additional responsiveness.","isTall":false,"howManySpaces":2},{"id":1,"src":"/efl-take-photo.jpg","caption":"Using WebRTC and js library cropme, I created a login photo system with recording and capturing capabilities. This was passed to Microsoft Azure API to verify the image for inflammatory content.","isTall":false,"howManySpaces":1},{"id":2,"src":"/efl-mobile.jpg","caption":"To optimise for mobile devices, the website transforms a large desktop element into a mobile tray which can be expanded with touchmove.","isTall":true,"howManySpaces":1},{"id":3,"src":"/efl-css-grid.png","caption":"I re-engineered the existing design system for Index Pages. The design updates based on CMS content changes and the filter component, so I used CSS grid and javascript to dynamically manipulate classes.","isTall":false,"howManySpaces":1}]}]}');
+
+/***/ })
+
+});
