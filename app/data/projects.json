@@ -52,13 +52,6 @@
                     "src": "/rnib-1.jpg",
                     "caption": "The Mixed reality experience begins with a tutorial, teaching the user how to point with the Gaze control UI.",
                     "isTall": false,
-                    "howManySpaces": 2
-                },
-                {
-                    "id": 0,
-                    "src": "/rnib-2.jpg",
-                    "caption": "To implement 360 Video, I livestreamed HTTP a 4k panoramic video, then used the HTML canvas to capture the media stream to use as three.js CanvasTexture",
-                    "isTall": false,
                     "howManySpaces": 1
                 },
                 {
@@ -67,6 +60,13 @@
                     "caption": "Note: This is a early development screenshot. A view of the eye conditions view with description pop-up & on-screen buttons",
                     "isTall": false,
                     "howManySpaces": 1
+                },
+                {
+                    "id": 0,
+                    "src": "/rnib-2.jpg",
+                    "caption": "To implement 360 Video, I livestreamed HTTP a 4k panoramic video, then used the HTML canvas to capture the media stream to use as three.js CanvasTexture",
+                    "isTall": false,
+                    "howManySpaces": 2
                 }
             ]
         },
@@ -110,14 +110,14 @@
                     "id": 0,
                     "name": "efl-banner",
                     "src": "/efl-banner.png",
-                    "xPos": 7,
+                    "xPos": 68,
                     "yPos": 4
                 },
                 {
                     "id": 1,
                     "name": "efl-take-photo-crop",
                     "src": "/efl-take-photo-crop.webp",
-                    "xPos": 20,
+                    "xPos": 15,
                     "yPos": 0
                 }
             ],

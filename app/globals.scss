@@ -116,7 +116,7 @@ footer {
   justify-content: space-between;
   gap: 1rem;
   text-align: center;
-  background: rgb(49 53 37);
+  background: rgb(26 18 26);
   color: white;
   padding: 3rem;
 
@@ -593,7 +593,7 @@ h2 {
     gap: 1rem;
     padding: 2rem;
     display: grid;
-    grid-template-columns: repeat( 2, minmax(200px, 500px));
+    grid-template-columns: 1fr;
     width: fit-content;
   }
 
@@ -643,14 +643,6 @@ h2 {
       filter: brightness(0.7);
     }
 
-    &.tall {
-      height: auto;
-      grid-row: span 2;
-      h3 {
-        font-size: 2.5rem;
-      }
-    }
-
     &__tags {
       border-radius: 0;
       padding: 0;
@@ -675,6 +667,14 @@ h2 {
   .project {
     &.span-2 {
       grid-column: span 2;
+    }
+
+    &.tall {
+      height: auto;
+      grid-row: span 2;
+      h3 {
+        font-size: 2.5rem;
+      }
     }
   }
 }
