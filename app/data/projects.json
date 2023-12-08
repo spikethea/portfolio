@@ -57,14 +57,14 @@
                 {
                     "id": 0,
                     "src": "/rnib-2.jpg",
-                    "caption": "",
+                    "caption": "To implement 360 Video, I livestreamed HTTP a 4k panoramic video, then used the HTML canvas to capture the media stream to use as three.js CanvasTexture",
                     "isTall": false,
                     "howManySpaces": 1
                 },
                 {
                     "id": 1,
                     "src": "/rnib-3.jpg",
-                    "caption": "",
+                    "caption": "Note: This is a early development screenshot. A view of the eye conditions view with description pop-up & on-screen buttons",
                     "isTall": false,
                     "howManySpaces": 1
                 }
@@ -75,7 +75,7 @@
             "name": "eflearning",
             "tagName": "England Football Learning",
             "subtitle": "While at cognizant, I built the UI for the new England Football Learning Website, a CMS for England Football coaching.",
-            "description": "While at cognizant, I built the UI for the new England Football Learning Website, a CMS for England Football coaching. Built using the Fractal UI framework + ES6 Javascript (with webpack) and SCSS, it greatly improved upon the existing B2C experience, and won Cognizant UK's Project of the Year in the communications Sector. Over the course of this project, I implemented new design systems, a profile biography UI, and advocated for as SVG animation library Rive.",
+            "description": "Built using the Fractal UI framework + ES6 Javascript (with webpack) and SCSS, it greatly improved upon the existing B2C experience, and won Cognizant UK's Project of the Year in the communications Sector. Over the course of this project, I implemented new design systems, a profile biography UI, and advocated for as SVG animation library Rive.",
             "url": "https://learn.englandfootball.com/",
             "tags": [
                 {
@@ -108,16 +108,16 @@
             "thumbnail_images": [
                 {
                     "id": 0,
-                    "name": "efl-1",
-                    "src": "/efl1.jpg",
-                    "xPos": 12,
-                    "yPos": 30
+                    "name": "efl-banner",
+                    "src": "/efl-banner.png",
+                    "xPos": 7,
+                    "yPos": 4
                 },
                 {
                     "id": 1,
-                    "name": "efl-2",
-                    "src": "/efl2.png",
-                    "xPos": 50,
+                    "name": "efl-take-photo-crop",
+                    "src": "/efl-take-photo-crop.webp",
+                    "xPos": 20,
                     "yPos": 0
                 }
             ],

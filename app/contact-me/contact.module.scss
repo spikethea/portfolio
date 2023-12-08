@@ -1,4 +1,6 @@
 .contact_me {
+    background-color: rgb(31, 16, 24);
+    color: rgb(240, 225, 235);
     &__inner {
         max-width: 90rem;
         display: flex;
@@ -6,24 +8,33 @@
         gap: 2rem;
         text-align: center;
         margin: auto;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(41, 26, 34);
         padding: 4rem 1rem;
     }
 
     h1 {
-        color: black;
+        color: white;
         font-size: 10vw;
+    }
+
+    h3 {
+        color: white;
+    }
+
+    h4 {
+        font-size: 1.2rem;
     }
 
     p {
         margin: auto;
-        max-width: 70rem;
-        font-size: 1.2rem;
+        max-width: 50rem;
+        font-size: 1rem;
         line-height: 120%;
+        color: rgb(194, 166, 181);
     }
 
     a {
-        color: rgb(25, 25, 175);
+        color: rgb(25, 115, 175);
         font-weight: bold;
     }
 
@@ -43,12 +54,17 @@
 
     ol {
         padding: 2rem;
-        border-top: 1px solid black;
+        border-top: 1px solid white;
         margin: auto;
         list-style-type: disc;
         line-height: 2rem;
         text-align: start;
         font-weight: 500;
+    }
+
+    
+    ul li a img {
+        filter: drop-shadow(0px 0px 9px rgba(255, 255, 255, 0.179));
     }
 
 }

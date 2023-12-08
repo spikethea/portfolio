@@ -15,7 +15,7 @@ const ContactMe = () => {
                     now, but for the past 5 years I have completed multiple complex applications, creating three-dimensional tools
                     & entertainment.
                 </p>
-                <h4>My achievements include:</h4>
+                <h3>My achievements include:</h3>
                 <ol>
                     <li>More than 2 1/2 years’ experience in Web Development</li>
                     <li>Commercial Mixed Reality and Augmented Reality experience</li>

@@ -1,5 +1,6 @@
 import Project from "./project";
-import projectData from "../../data/projects.json"
+import projectData from "../../data/projects.json";
+import { projectProps } from "@components/ProjectEntry";
 
 export async function generateStaticParams() {
     //const projects = await fetch('https://.../projects').then((res) => res.json())
@@ -10,6 +11,6 @@ export async function generateStaticParams() {
     }))
 } 
 
-export default function Page({ params }) {
+export default function Page({ params }: { params: projectProps}) {
     return <Project params={params}/>
 }
