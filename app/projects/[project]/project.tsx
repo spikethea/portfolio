@@ -4,10 +4,11 @@ import ProjectImage from '@components/ProjectImage';
 import '/app/globals.scss'
 import { useEffect, useRef, useState } from 'react';
 import data from '../../data/projects.json';
+import { useParams } from 'next/navigation';
 
 
-export default function Project({ params }) {
-  // const params = useParams();
+export default function Project() {
+  const params = useParams();
   const articleRef = useRef<HTMLDivElement>(null);
   const [articleTop, setArticleTop] = useState(0);
   const [footerHeight, setFooterHeight] = useState(328);
