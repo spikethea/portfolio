@@ -151,6 +151,254 @@
                     "howManySpaces": 1
                 }
             ]
+        },
+        {
+            "id":2,
+            "name": "servicelearn",
+            "tagName": "ServiceLearn: 3D Hospitality Training WebApp",
+            "subtitle": "ServiceLearn is a browser-based training application built for the hospitality industry, intended to solve the issue of unintuitive, monotonous training experiences which seldom apply to the real-life scenarios which employees face.",
+            "description": "This project utilises interactive three-dimensional graphics, intending to deliver a richer, more self-directed experience to motivate users. The importance of this project lies in the fact that current online training fails to enthusiastically engage employees, resulting in costly mistakes, re-training required and extra resources.",
+            "url": "https://servicelearn.netlify.app/",
+            "tags": [
+                {
+                    "copy": "ReactJS",
+                    "hexValue": "#f7c80a"
+                },
+                {
+                    "copy": "react-three-fiber",
+                    "hexValue": "#750af7"
+                },
+                {
+                    "copy": "Redux",
+                    "hexValue": "#f71a0a"
+                },
+                {
+                    "copy": "react-spring",
+                    "hexValue": "#80eb34"
+                },
+                {
+                    "copy": "Responsive UI",
+                    "hexValue": "#0a6df7"
+                },
+                {
+                    "copy": "Gamification",
+                    "hexValue": "#80eb34"
+                },
+                {
+                    "copy": "redux-persist",
+                    "hexValue": "#80eb34"
+                },
+                {
+                    "copy": "Blender 3D",
+                    "hexValue": "#80eb34"
+                }
+
+            ],
+            "video": {
+                    "name": "servicelearn-video",
+                    "alt": "edit of the servicelearn youtube video",
+                    "src": "/servicelearn.mp4"
+            },
+            "thumbnail_images": [
+                {
+                    "id": 0,
+                    "name": "servicelearn-tutorial",
+                    "src": "/servicelearn-tutorial-popup.jpg",
+                    "xPos": 68,
+                    "yPos": 4
+                },
+                {
+                    "id": 1,
+                    "name": "servicelearn-home-mobile",
+                    "src": "/servicelearn-home-mobile-thumbnail.png",
+                    "xPos": 28,
+                    "yPos": 60
+                }
+            ],
+            "images": [
+                {
+                    "id": 0,
+                    "src": "/servicelearn-kitchen.jpg",
+                    "caption": "All the 3D Assets, inlcuding the Kitchen scene were created in Blender 3D and Textured with Photoshop",
+                    "isTall": false,
+                    "howManySpaces": 2
+                },
+                {
+                    "id": 0,
+                    "src": "/servicelearn-home-mobile.jpg",
+                    "caption": "Mobile-first was the approach for this Webapp. The responsive UI overlays the 3D scene partially with backdrop filter, reducing the connection between the two interactive mediums.",
+                    "isTall": true,
+                    "howManySpaces": 1
+                },
+                {
+                    "id": 1,
+                    "src": "/servicelearn-badge-mobile.jpg",
+                    "caption": "Notifications and achievements are integrated with the 3D experience. This allowed for an intrinsically motivating experience which allows for richer interactions.",
+                    "isTall": false,
+                    "howManySpaces": 1
+                },
+                {
+                    "id": 2,
+                    "src": "/servicelearn-allergen-fullscreen.jpg",
+                    "caption": "The UI was designed so the user could use/view the ui while the 3D scene is accessible. e.g. Information Box, and the archive page/allergen form utilising the laptop/desktop screen width.",
+                    "isTall": false,
+                    "howManySpaces": 1
+                },
+                {
+                    "id": 2,
+                    "src": "/servicelearn-allergen-fullscreen.jpg",
+                    "caption": "The UI was designed so the user could use/view the ui while the 3D scene is accessible. e.g. Information Box, and the archive page/allergen form utilising the laptop/desktop screen width.",
+                    "isTall": false,
+                    "howManySpaces": 2
+                }
+            ]
+        },
+        {
+            "id":2,
+            "name": "wristband-interface",
+            "tagName": "A&E Wristband Interface",
+            "subtitle": "The A&E Wristband Interface is a IoE Interface which uses ReactJS, GoLang and GraphQL to help NHS staff track & organise patients in Accident and Emergency Rooms in Hospitals in real time.",
+            "description": "My role as front-end developer was to build a series of interfaces as per designed prototype and use GraphlQL-Apollo to query GraphQL GET and POST the wristband data to and from the back-end. In conjuction with a Back-End Developer & UX Designer, we took on the project over a year with Client Cerberus Security Laboratories to create the interface for the Admin and Nurse Interface, from a prototype to a fully functioning fullstack application/server.",
+            "url": "https://www.youtube.com/watch?v=8u69eYnbKwY",
+            "tags": [
+                {
+                    "copy": "ReactJS",
+                    "hexValue": "#f7c80a"
+                },
+                {
+                    "copy": "WebSockets API",
+                    "hexValue": "#f7c80a"
+                },
+                {
+                    "copy": "GraphQL",
+                    "hexValue": "#750af7"
+                },
+                {
+                    "copy": "react-spring",
+                    "hexValue": "#f71a0a"
+                },
+                {
+                    "copy": "Apollo",
+                    "hexValue": "#0a6df7"
+                },
+                {
+                    "copy": "d3.js",
+                    "hexValue": "#80eb34"
+                }
+
+            ],
+            "video": {
+                    "name": "wristband-interface",
+                    "alt": "video edit of secret levels game",
+                    "src": "/wristband-interface.mp4"
+            },
+            "thumbnail_images": [
+                {
+                    "id": 0,
+                    "name": "secret-levels-screenshot",
+                    "src": "/cerberus-patient.png",
+                    "xPos": 28,
+                    "yPos": 0
+                },
+                {
+                    "id": 1,
+                    "name": "secret-levels-character-thumbnail",
+                    "src": "/cerberus-patient.png",
+                    "xPos": 65,
+                    "yPos": 20
+                }
+            ],
+            "images": [
+                {
+                    "id": 0,
+                    "src": "/cerberus-nurse-view.jpg",
+                    "caption": "I used the DeltaTime function to move the stage in sync, creating a surreal obstacle course similar to difficult stage in Super Monkey Ball.",
+                    "isTall": false,
+                    "howManySpaces": 2
+                }
+            ]
+        },
+        {
+            "id":3,
+            "name": "secret-levels",
+            "tagName": "The Secret Levels",
+            "subtitle": "The Secret Levels is a 3D platformer inspired by the modern platformer Super Mario Galaxy.",
+            "description": "It uses the three.js for 3d graphics, and Phyx-Based javascript library ammo.js for physics simulation. ",
+            "url": "https://projects.quincegr.com/secret-level/",
+            "tags": [
+                {
+                    "copy": "Vanilla JS",
+                    "hexValue": "#f7c80a"
+                },
+                {
+                    "copy": "three.js",
+                    "hexValue": "#750af7"
+                },
+                {
+                    "copy": "ammo.js",
+                    "hexValue": "#f71a0a"
+                },
+                {
+                    "copy": "Touch API",
+                    "hexValue": "#0a6df7"
+                },
+                {
+                    "copy": "Blender 3D",
+                    "hexValue": "#80eb34"
+                }
+
+            ],
+            "video": {
+                    "name": "secret-levels",
+                    "alt": "video edit of secret levels game",
+                    "src": "/secret-levels.mp4"
+            },
+            "thumbnail_images": [
+                {
+                    "id": 0,
+                    "name": "secret-levels-screenshot",
+                    "src": "/secret-levels_screenshot.png",
+                    "xPos": 28,
+                    "yPos": 0
+                },
+                {
+                    "id": 1,
+                    "name": "secret-levels-character-thumbnail",
+                    "src": "/secret-levels_character-thumbnail.png",
+                    "xPos": 65,
+                    "yPos": 20
+                }
+            ],
+            "images": [
+                {
+                    "id": 0,
+                    "src": "/secret-levels_stage.jpg",
+                    "caption": "I used the DeltaTime function to move the stage in sync, creating a surreal obstacle course similar to difficult stage in Super Monkey Ball.",
+                    "isTall": false,
+                    "howManySpaces": 2
+                },
+                {
+                    "id": 0,
+                    "src": "/secret-levels_mobile.jpg",
+                    "caption": "For mobile devices, I used the Touch API to switch from keyboard to multi-touch controls. The virtual joystick can be placed across the screen, and vibrates for supported devices.",
+                    "isTall": true,
+                    "howManySpaces": 1
+                },
+                {
+                    "id": 1,
+                    "src": "/secret-levels_particles.jpg",
+                    "caption": "A particle system was created to add stars, to give the stage an outer-space effect. The star sprite was created in GIMP.",
+                    "isTall": false,
+                    "howManySpaces": 1
+                },
+                {
+                    "id": 1,
+                    "src": "/secret-levels_character.jpg",
+                    "caption": "For the player, I created a low-polygon character model in Blender 3D.  The face was modelled using side and front reference photos.",
+                    "isTall": false,
+                    "howManySpaces": 1
+                }
+            ]
         }
     ]
 }

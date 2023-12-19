@@ -26,7 +26,7 @@ interface projectImageProps {
 const ProjectImage = ({imageData}: projectImageProps) => {
     const containerRef = useRef(null);
     const entry = useIntersectionObserver(containerRef, {
-        threshold: 0.9
+        threshold: imageData.isTall ? 0.3 : 0.9
     })
     // const [isVisible, setIsVisible] = useState(false);
 

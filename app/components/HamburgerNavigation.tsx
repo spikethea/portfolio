@@ -52,6 +52,11 @@ const HamburgerNavigation = () => {
                     <img src="/images/svg/github.svg"/>
                 </a>
             </li>
+            <li>
+                <a href="https://www.artstation.com/spikethea">
+                    <img src="/images/svg/artstation.svg"/>
+                </a>
+            </li>
           </ul>
         </nav>
         </Fragment>
