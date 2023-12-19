@@ -268,6 +268,7 @@ nav {
     filter: brightness(0.5);
   }
   h1 {
+    pointer-events: none;
     color: #ffffff;
     font-size: 3rem;
     z-index: 5;
@@ -480,6 +481,7 @@ h2 {
       padding: 0.5rem;
       color: white;
       font-weight: 500;
+      cursor: grab;
       &:hover {
         transition: all ease-in 0.1s;
         border-right:  0.3px solid black;
@@ -630,8 +632,8 @@ h2 {
       box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.6);
     }
     p {
-      background: #171717;
-      border: 1px solid #383838;
+      backdrop-filter: blur(9px);
+      background: #8080805e;
       font-size: 0.85rem;
     }
 

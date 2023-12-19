@@ -140,11 +140,17 @@ const ProjectEntry = ({projectData, setTitle}: projectProps) => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     const entry = useIntersectionObserver(ref, {
-      threshold: 0.9
+      threshold: 0.7
     });
 
     useEffect(()=> {
-      
+      if (window.ontouchstart === undefined && window.onmouseover !== undefined) return;
+
+      if (entry?.isIntersecting) {
+        videoRef.current?.play();
+      } else {
+        videoRef.current?.pause();
+      }
     }, [entry?.isIntersecting]);
 
     

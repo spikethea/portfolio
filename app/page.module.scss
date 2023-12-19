@@ -62,6 +62,7 @@
 }
 
 .hero_section h1 {
+  pointer-events: none;
   backdrop-filter: invert(1);
   font-size: 16vw;
   color: white;
@@ -148,7 +149,7 @@
     white-space: nowrap;
     font-weight: bold;
     text-transform: uppercase;
-    filter: drop-shadow(0 0 0.1rem white);;
+    filter: drop-shadow(0 0 0.3rem black);
     z-index: 18;
     font-size: 3rem;
     position: absolute;
@@ -156,7 +157,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 1;
-    color: black;
+    color: white;
     padding: 1rem;
     &.hidden {
       opacity: 0;

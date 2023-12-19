@@ -7,32 +7,32 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import * as THREE from "three";
 import { VRButton,  XR } from '@react-three/xr'
 
-function Box(props: any) {
-  // This reference will give us direct access to the mesh
-  const meshRef = useRef<THREE.Mesh>(null)
-  // Set up state for the hovered and active state
-  const [hovered, setHover] = useState(false)
-  const [active, setActive] = useState(false)
-  // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-        meshRef.current.rotation.x += delta
-    }
-})
-  // Return view, these are regular three.js elements expressed in JSX
-  return (
-    <mesh
-      {...props}
-      ref={meshRef}
-      scale={active ? 1.5 : 1}
-      onClick={(event) => setActive(!active)}
-      onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-    </mesh>
-  )
-}
+// function Box(props: any) {
+//   // This reference will give us direct access to the mesh
+//   const meshRef = useRef<THREE.Mesh>(null)
+//   // Set up state for the hovered and active state
+//   const [hovered, setHover] = useState(false)
+//   const [active, setActive] = useState(false)
+//   // Subscribe this component to the render-loop, rotate the mesh every frame
+//   useFrame((state, delta) => {
+//     if (meshRef.current) {
+//         meshRef.current.rotation.x += delta
+//     }
+// })
+//   // Return view, these are regular three.js elements expressed in JSX
+//   return (
+//     <mesh
+//       {...props}
+//       ref={meshRef}
+//       scale={active ? 1.5 : 1}
+//       onClick={(event) => setActive(!active)}
+//       onPointerOver={(event) => setHover(true)}
+//       onPointerOut={(event) => setHover(false)}>
+//       <boxGeometry args={[1, 1, 1]} />
+//       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+//     </mesh>
+//   )
+// }
 
 
 function Plane (props: any) {
@@ -43,6 +43,7 @@ function Plane (props: any) {
     rotation={[-Math.PI / 2, 0, 0]}
     position={[0, -4, 0]}
     receiveShadow
+    castShadow
     >
       <planeGeometry/>
       <meshLambertMaterial/>
@@ -60,7 +61,7 @@ function PalmTree (props: any) {
     ref.current.children[0].castShadow = true;
     ref.current.children[0].receiveShadow = true;
     ref.current.children[0].needsUpdate = true;
-  }, [])
+  }, []);
 
   return (
     <primitive
@@ -111,6 +112,7 @@ export default function WebGLCanvas () {
         />
         <Canvas
         style={{flex: '1'}}
+        shadows={'soft'}
         >
           <XR>
             <Camera/>
@@ -118,7 +120,7 @@ export default function WebGLCanvas () {
             <ambientLight />
             <directionalLight
              color={0xFFE8B7}
-              position={[-100, 10, 10]}
+              position={[10, 10, 10]}
               castShadow // highlight-line
               shadow-mapSize-height={512}
               shadow-mapSize-width={512}
