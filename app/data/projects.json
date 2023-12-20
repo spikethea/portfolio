@@ -257,8 +257,8 @@
             "id":2,
             "name": "wristband-interface",
             "tagName": "A&E Wristband Interface",
-            "subtitle": "The A&E Wristband Interface is a IoE Interface which uses ReactJS, GoLang and GraphQL to help NHS staff track & organise patients in Accident and Emergency Rooms in Hospitals in real time.",
-            "description": "My role as front-end developer was to build a series of interfaces as per designed prototype and use GraphlQL-Apollo to query GraphQL GET and POST the wristband data to and from the back-end. In conjuction with a Back-End Developer & UX Designer, we took on the project over a year with Client Cerberus Security Laboratories to create the interface for the Admin and Nurse Interface, from a prototype to a fully functioning fullstack application/server.",
+            "subtitle": "The A&E Wristband Interface is a IoT Interface which helps NHS staff track & organise patients in Accident and Emergency Rooms.",
+            "description": "My role was to build a series of interfaces which would monitor the patients’ vital signs and location, providing medical and administration staff assistive information to help aid their decisions. Bringing the prototype to life, my team created a system which retrieves specific data, is reactive to that in in real-time, and updates the cache of data locally and back on the server’s database to remain parity with the front-end.",
             "url": "https://www.youtube.com/watch?v=8u69eYnbKwY",
             "tags": [
                 {
@@ -278,11 +278,19 @@
                     "hexValue": "#f71a0a"
                 },
                 {
-                    "copy": "Apollo",
+                    "copy": "Apollo-Client",
                     "hexValue": "#0a6df7"
                 },
                 {
-                    "copy": "d3.js",
+                    "copy": "D3.js",
+                    "hexValue": "#80eb34"
+                },
+                {
+                    "copy": "React Router",
+                    "hexValue": "#80eb34"
+                },
+                {
+                    "copy": "Internet of Things",
                     "hexValue": "#80eb34"
                 }
 
@@ -296,8 +304,8 @@
                 {
                     "id": 0,
                     "name": "secret-levels-screenshot",
-                    "src": "/cerberus-patient.png",
-                    "xPos": 28,
+                    "src": "/cerberus-d3-thumbnail.png",
+                    "xPos": 18,
                     "yPos": 0
                 },
                 {
@@ -312,9 +320,23 @@
                 {
                     "id": 0,
                     "src": "/cerberus-nurse-view.jpg",
-                    "caption": "I used the DeltaTime function to move the stage in sync, creating a surreal obstacle course similar to difficult stage in Super Monkey Ball.",
+                    "caption": "The design of the UI was informed and created with iterative UX design + research methods, to ensure that the product works best for the staff which use it.",
                     "isTall": false,
                     "howManySpaces": 2
+                },
+                {
+                    "id": 0,
+                    "src": "/cerberus-d3.jpg",
+                    "caption": "To present the patient details to allow staff to better understand trends in vitals score, I used data vizualisation library d3.js to map the scores over an extended time.",
+                    "isTall": false,
+                    "howManySpaces": 1
+                },
+                {
+                    "id": 0,
+                    "src": "/cerberus-location.jpg",
+                    "caption": "The track the patients vitals score and location, I used the WebSockets API to a maintain a persistent connection to update data in real-time.",
+                    "isTall": false,
+                    "howManySpaces": 1
                 }
             ]
         },
@@ -324,7 +346,7 @@
             "tagName": "The Secret Levels",
             "subtitle": "The Secret Levels is a 3D platformer inspired by the modern platformer Super Mario Galaxy.",
             "description": "It uses the three.js for 3d graphics, and Phyx-Based javascript library ammo.js for physics simulation. ",
-            "url": "https://projects.quincegr.com/secret-level/",
+            "url": "https://projects.quincegr.com/secret-levels/",
             "tags": [
                 {
                     "copy": "Vanilla JS",
