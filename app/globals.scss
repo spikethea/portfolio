@@ -360,7 +360,8 @@ h2 {
   }
 
   article {
-    height: 100%;
+    height: fit-content;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -391,6 +392,7 @@ h2 {
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin: 1rem;
   gap: 1rem;
 }
 
@@ -401,14 +403,18 @@ h2 {
   position: relative;
   padding: 1rem;
   margin: 0;
-  height: 35rem;
-  max-height: 90vh;
+  height: 20rem;
+  max-height: 100vh;
   border: 1px solid black;
 
   &:hover {
     h3::after {
       width: 100%;
     }
+  }
+
+  &.tall {
+    min-height: 80vh;
   }
 
   .bg-image {
@@ -692,6 +698,8 @@ h2 {
   }
 
   .project {
+    margin: 0;
+    height: 35rem;
     &.span-2 {
       grid-column: span 2;
     }
