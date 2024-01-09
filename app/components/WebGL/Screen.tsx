@@ -1,21 +1,22 @@
+'use client'
+
 // Loads the skybox texture and applies it to the scene.
 import { useEffect, useState } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { useLoader } from "@react-three/fiber";
-import { Object3D } from "three";
 
 
 
 export default function Screen(props: any) {
-    const { nodes } = useLoader(GLTFLoader, 'assets/screen.glb');
+    const { nodes }: {nodes: {Screen: THREE.Mesh}} = useLoader(GLTFLoader, 'assets/screen.glb');
 
     useEffect(() => {
 
           if ( nodes.Screen ) { 
-            nodes.Screen.material.transparent = true;
+            (nodes.Screen.material as THREE.ShaderMaterial).transparent = true;
             nodes.Screen.castShadow = true;
             nodes.Screen.receiveShadow = true;
-            nodes.Screen.needsUpdate = true;
+            (nodes.Screen.material as THREE.ShaderMaterial).needsUpdate = true;
           }
 
       }, []);
@@ -28,7 +29,7 @@ export default function Screen(props: any) {
         vid.loop = true;
         vid.muted = true;
         vid.play();
-        console.log(vid)
+
         return vid;
     });
 

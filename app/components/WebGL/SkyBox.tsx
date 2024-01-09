@@ -1,3 +1,5 @@
+'use client'
+
 // Loads the skybox texture and applies it to the scene.
 
 import { useThree } from "@react-three/fiber";

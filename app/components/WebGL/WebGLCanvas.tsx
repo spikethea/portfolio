@@ -7,7 +7,7 @@ import Screen from './Screen';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import * as THREE from "three";
 import { VRButton,  XR } from '@react-three/xr'
-import { SkeletonUtils } from 'three/examples/jsm/Addons.js';
+import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
 
 // function Box(props: any) {
 //   // This reference will give us direct access to the mesh
@@ -71,8 +71,7 @@ function Building (props: any) {
 
   const clone = useMemo(() => SkeletonUtils.clone(gltf.scene), [gltf.scene])
   const { nodes } = useGraph(clone);
-  console.log(nodes);
-  
+ 
   useEffect(() => {
 
     gltf.scene.traverse( function( node: any ) {
@@ -181,7 +180,6 @@ export default function WebGLCanvas () {
               shadow-camera-right={100}
               shadow-camera-top={100}
               shadow-camera-bottom={-100}
-              shadow-camera-radius={0.01}
             />
             <Floor/>
             <PalmTree position={[20, -4, 0]} />
@@ -191,7 +189,7 @@ export default function WebGLCanvas () {
             <Building rotation={[0, -Math.PI/2, 0]} position={[0, -5, -80]} />
             <Building rotation={[0, -Math.PI/2, 0]} position={[40, -5, -80]} />
 
-            <Screen position={[-10, -3, -20]} rotation={[0, Math.PI*0.2, 0]}/>
+            <Screen position={[-10, -4, -20]} rotation={[0, Math.PI*0.2, 0]}/>
             </XR>
         </Canvas>
       </>
