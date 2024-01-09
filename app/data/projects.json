@@ -255,9 +255,9 @@
         },
         {
             "id":2,
-            "name": "wristband-interface",
+            "name": "wristband-ui",
             "tagName": "A&E Wristband Interface",
-            "subtitle": "The A&E Wristband Interface is a IoT Interface which helps NHS staff track & organise patients in Accident and Emergency Rooms.",
+            "subtitle": "The A&E Wristband Interface is a IoT Interface built for Cerberus Security Laboratories which helps NHS staff track & organise patients in Accident and Emergency Rooms.",
             "description": "My role was to build a series of interfaces which would monitor the patients’ vital signs and location, providing medical and administration staff assistive information to help aid their decisions. Bringing the prototype to life, my team created a system which retrieves specific data, is reactive to that in in real-time, and updates the cache of data locally and back on the server’s database to remain parity with the front-end.",
             "url": "https://www.youtube.com/watch?v=8u69eYnbKwY",
             "tags": [
@@ -380,7 +380,7 @@
                     "id": 0,
                     "name": "secret-levels-screenshot",
                     "src": "/secret-levels_screenshot.png",
-                    "xPos": 28,
+                    "xPos": 2,
                     "yPos": 0
                 },
                 {

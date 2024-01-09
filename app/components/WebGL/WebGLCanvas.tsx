@@ -1,11 +1,13 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
-import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
-import SkyBox from './SkyBox'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { Canvas, useFrame, useGraph, useLoader, useThree } from '@react-three/fiber'
+import SkyBox from './SkyBox';
+import Screen from './Screen';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import * as THREE from "three";
 import { VRButton,  XR } from '@react-three/xr'
+import { SkeletonUtils } from 'three/examples/jsm/Addons.js';
 
 // function Box(props: any) {
 //   // This reference will give us direct access to the mesh
@@ -35,10 +37,18 @@ import { VRButton,  XR } from '@react-three/xr'
 // }
 
 
-function Plane (props: any) {
+function Floor (props: any) {
+
+  const texture = useLoader(THREE.TextureLoader, 'assets/textures/floor_texture.jpg');
+  texture.repeat = new THREE.Vector2(10, 10);
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  const ref = useRef(null as any);
+
   return (
     <mesh
     {...props}
+    
     scale={[200, 200, 200]}
     rotation={[-Math.PI / 2, 0, 0]}
     position={[0, -4, 0]}
@@ -46,15 +56,53 @@ function Plane (props: any) {
     castShadow
     >
       <planeGeometry/>
-      <meshLambertMaterial/>
+      <meshLambertMaterial 
+        map={texture}
+        ref={ref}
+      />
     </mesh>
+  )
+}
+
+function Building (props: any) {
+
+  const gltf = useLoader(GLTFLoader, 'assets/barcelona_building.glb');
+  const ref = useRef(null as any)
+
+  const clone = useMemo(() => SkeletonUtils.clone(gltf.scene), [gltf.scene])
+  const { nodes } = useGraph(clone);
+  console.log(nodes);
+  
+  useEffect(() => {
+
+    gltf.scene.traverse( function( node: any ) {
+
+      if ( node.isMesh ) { 
+        node.material.transparent = true;
+        node.castShadow = true;
+        node.receiveShadow = true;
+        node.needsUpdate = true;
+      }
+
+  } );
+  }, []);
+
+  return (
+    <primitive
+      ref={ref}
+      {...props}
+      object={nodes.Scene}
+    />
   )
 }
 
 function PalmTree (props: any) {
 
   const gltf = useLoader(GLTFLoader, 'assets/palm_tree.glb');
-  const ref = useRef(null as any)
+  const ref = useRef(null as any);
+
+  const clone = useMemo(() => SkeletonUtils.clone(gltf.scene), [gltf.scene])
+  const { nodes } = useGraph(clone);
   
   useEffect(() => {
     ref.current.children[0].material.transparent = true;
@@ -67,7 +115,7 @@ function PalmTree (props: any) {
     <primitive
       ref={ref}
       {...props}
-      object={gltf.scene}
+      object={nodes.Scene}
     />
   )
 }
@@ -84,7 +132,7 @@ function Camera() {
         camera.rotation.x = Math.PI/4;
       }
       
-      camera.position.lerp(new THREE.Vector3(0, 4 -( window.scrollY / window.innerHeight)* 8, 10), 0.09)
+      camera.position.lerp(new THREE.Vector3(0, 3 -( window.scrollY / window.innerHeight)* 8, 10), 0.09)
   });
 
   return (
@@ -116,17 +164,34 @@ export default function WebGLCanvas () {
         >
           <XR>
             <Camera/>
+            {/* <fogExp2 color={0x2d4861} attach="fog" density={2}/> */}
+            {/* <fog attach="fog" args={[0x9cdbff, 10, 250]}/> */}
             <SkyBox/>
-            <ambientLight />
+            <ambientLight color={0xe3d7ba}/>
             <directionalLight
+              intensity={5}
              color={0xFFE8B7}
               position={[10, 10, 10]}
               castShadow // highlight-line
               shadow-mapSize-height={512}
               shadow-mapSize-width={512}
+              shadow-camera-near={0.1}
+              shadow-camera-far={200}
+              shadow-camera-left={-100}
+              shadow-camera-right={100}
+              shadow-camera-top={100}
+              shadow-camera-bottom={-100}
+              shadow-camera-radius={0.01}
             />
-            <Plane/>
+            <Floor/>
             <PalmTree position={[20, -4, 0]} />
+            <PalmTree position={[5, -4, 0]} />
+
+            <Building rotation={[0, -Math.PI/2, 0]} position={[-40, -5, -80]} />
+            <Building rotation={[0, -Math.PI/2, 0]} position={[0, -5, -80]} />
+            <Building rotation={[0, -Math.PI/2, 0]} position={[40, -5, -80]} />
+
+            <Screen position={[-10, -3, -20]} rotation={[0, Math.PI*0.2, 0]}/>
             </XR>
         </Canvas>
       </>
