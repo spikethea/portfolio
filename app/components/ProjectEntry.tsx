@@ -1,6 +1,6 @@
 'use client'
 
-import React, { MouseEvent, RefObject, useEffect, useRef, useState } from 'react';
+import React, { RefObject, useEffect, useRef, useState } from 'react';
 import styles from '../page.module.scss'
 import { Title } from '../page';
 import Link from 'next/link';
@@ -17,16 +17,26 @@ export interface projectData {
   tagName: string;
   video:   Video;
   images:  Image[];
+  thumbnail_images:  ThumbnailImage[];
 }
 
 
 export interface Image {
+  id: number,
+  src:  string,
+  caption: string,
+  isTall: boolean,
+  howManySpaces: number
+}
+
+export interface ThumbnailImage {
   id: number,
   name: string;
   src:  string;
   xPos: number,
   yPos: number
 }
+
 
 export interface Video {
   name: string;
@@ -41,7 +51,7 @@ const ProjectEntry = ({projectData, setTitle}: projectProps) => {
   const imagesRef = useRef([]);
   const titleRef = useRef();
 
-  function rotateCard(e:MouseEvent<Element, MouseEvent>) {
+  function rotateCard(e:MouseEvent) {
     const THRESHOLD = 15;
     const { clientX, clientY, currentTarget } = e;
     const card = currentTarget as HTMLElement;

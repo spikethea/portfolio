@@ -1,12 +1,12 @@
 'use client'
 
-import { Fragment, useState } from "react";
+import { Fragment, useState, MouseEvent } from "react";
 
 const HamburgerNavigation = () => {
 
     const [isHidden, setHidden] = useState(true);
 
-    const toggleNavigation = (e) => {
+    const toggleNavigation = (e: MouseEvent<HTMLButtonElement>) => {
         const element = e.target;
         setHidden((prevState) => !prevState);
         setTimeout(() => {
