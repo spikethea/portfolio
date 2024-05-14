@@ -33,6 +33,7 @@ export default function Screen(props: any) {
         return vid;
     });
 
+
     return (
     <group {...props}>
         <primitive object={nodes.Screen}/>

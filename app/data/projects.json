@@ -334,9 +334,16 @@
                 {
                     "id": 0,
                     "src": "/cerberus-location.jpg",
-                    "caption": "The track the patients vitals score and location, I used the WebSockets API to a maintain a persistent connection to update data in real-time.",
+                    "caption": "The track the patients vitals score and location, I used the GraphQL subscriptions to a maintain a persistent connection to update data in real-time. Initially it calls a Query to request the wristband data, and then sets up a live subscription through Websockets API",
                     "isTall": false,
                     "howManySpaces": 1
+                },
+                {
+                    "id": 0,
+                    "src": "/cerberus-graphql.jpg",
+                    "caption": " This project was developed using GraphQL Subscriptions, Mutations, and Queries to effeciently query data, and reduce unnecessary page reloads. It updates the UI with more cards, based on the push notification from the back-end GoLang API.",
+                    "isTall": false,
+                    "howManySpaces": 2
                 }
             ]
         },
