@@ -95,7 +95,10 @@ function PalmTree (props: any) {
 function Camera() {
 
   const { camera } = useThree();
+  const lerpVector = new THREE.Vector3(0, 3, 10);
   const rotationFactor = 2;
+
+  lerpVector.y = 3 -( window.scrollY / window.innerHeight)* 8;
 
   useFrame((state, delta) => {
       if ((window.scrollY / window.innerHeight)*rotationFactor < Math.PI/4) {
@@ -104,7 +107,7 @@ function Camera() {
         camera.rotation.x = Math.PI/4;
       }
       
-      camera.position.lerp(new THREE.Vector3(0, 3 -( window.scrollY / window.innerHeight)* 8, 10), 0.09)
+      camera.position.lerp(lerpVector, 0.09)
   });
 
   return (
