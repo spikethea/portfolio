@@ -1,7 +1,8 @@
 'use client'
-
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import '../../globals.scss';
+import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import { Canvas, useFrame, useGraph, useLoader, useThree } from '@react-three/fiber'
+import { Html, Loader, useProgress } from '@react-three/drei';
 import SkyBox from './SkyBox';
 import Screen from './Screen';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
@@ -120,7 +121,6 @@ export default function WebGLCanvas () {
   const [ vrControllers, setVrControllers ] = useState(null);
   const [XRButton, setXRButton] = useState<HTMLElement>();
 
-
   useEffect(() => {
     return () => {
       XRButton?.remove();
@@ -129,15 +129,15 @@ export default function WebGLCanvas () {
 
     return (
       <>
-        <VRButton
+        {/* <VRButton
          onError={(e) => console.error(e)}
          id='VRButton'
-        />
+        /> */}
         <Canvas
         style={{flex: '1'}}
         shadows={'soft'}
         >
-          <XR>
+          <Suspense>
             <Camera/>
             {/* <fogExp2 color={0x2d4861} attach="fog" density={2}/> */}
             {/* <fog attach="fog" args={[0x9cdbff, 10, 250]}/> */}
@@ -166,8 +166,9 @@ export default function WebGLCanvas () {
             <Building rotation={[0, -Math.PI/2, 0]} position={[40, -5, -80]} />
 
             <Screen position={[-10, -4, -20]} rotation={[0, Math.PI*0.2, 0]}/>
-            </XR>
+            </Suspense>
         </Canvas>
+        <Loader/>
       </>
     )
 }

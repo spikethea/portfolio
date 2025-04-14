@@ -306,7 +306,7 @@ h1 {
 }
 
 h2 {
-  font-weight: 300;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -315,6 +315,16 @@ h2 {
 // }
 
 // Content
+
+.loading-screen {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
 
 .content-container {
   display: flex;
@@ -376,11 +386,12 @@ h2 {
   transform: skew(20deg);
   color: white;
   text-transform: uppercase;
+  font-style: italic;
 
   &-container {
     margin: 1rem auto;
     border: 1px solid white;
-    width: fit-content;
+    width: 90%;
     margin-top: auto;
     background-color: rgb(82 37 87);
     padding: 1rem 2rem;

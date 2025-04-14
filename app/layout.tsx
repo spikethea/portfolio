@@ -24,9 +24,9 @@ export default function RootLayout({
       <HamburgerNavigation/>
         <footer className={inter.className}>
           <h1>QUINCEGR</h1>
-          <h4>Portfolio created using NextJS and Typescript</h4>
+          <h4>Website Portfolio created using NextJS and Typescript</h4>
           <br />
-          <h4>Projects</h4>
+          <h3>Projects</h3>
           <div className='index'>
             {projectData.map((project, id)=> 
               <a id={`project-index-${id}`} href={`/projects/${project.name}`}>{project.tagName}</a>

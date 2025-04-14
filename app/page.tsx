@@ -43,14 +43,13 @@ export default function Home() {
         <WebGLCanvas/>
         {/* <img src="/palm_tree.png" alt="Render of Palm Tree" /> */}
         <h1>QuinceGR</h1>
-        <h3 className={styles.in_development}>Note: This Portfolio is in still in development. Come back to see more changes soon.</h3>
       </section>
       <div className={styles.content_container}>
         <Marquee>
-            <h2>REACTJS (HOOKS + REDUX) | WEBGL | IOS DEVELOPMENT | GRAPHQL &amp; APOLLO | ES6 JAVASCRIPT | DESIGN AND UX | 3D MODELLING | </h2>
+            <h2>REACTJS (HOOKS + REDUX) | WEBGL | AUGMENTED & VIRTUAL REALITY | ES6 JAVASCRIPT | DESIGN AND UX | 3D MODELLING &amp; ANIMATION| </h2>
         </Marquee>
         <section className={styles.content_container__inner}>
-          <h2>Creative Developer</h2>
+          <h2>Software Developer</h2>
           {projectData?.map((project, id) => (
             <ProjectEntry key={id} setTitle={setTitle} projectData={project}/>
           ))}

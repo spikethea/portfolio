@@ -30,6 +30,11 @@ export default function Screen(props: any) {
         vid.muted = true;
         vid.play();
 
+        vid.addEventListener('ended', () => {
+            vid.currentTime = 0.1;
+            vid.play();
+        })
+
         return vid;
     });
 

@@ -4,9 +4,9 @@
             "id": 0,
             "name": "rnib-eyeware",
             "tagName": "RNIB: Eyeware 2.0",
-            "subtitle": "Employed at Zappar Developing a Mixed Reality Web application for use in the Eyeware 2.0 app for the RNIB.Additionally create a similar, stripped down WebAR version.",
+            "subtitle": "Employed at Zappar, Developed a Mixed Reality Web application Eyeware 2.0 app for use in the Royal National Insitute of the Blind (RNIB). Additionally created a parallel WebAR version.",
             "description": "Developed a single-page webAR app involved using the three.js implementation of Universal AR library in typescript. Developed a 3D stereoscopic view which allows users to go through a simulation eye conditions in tasks, levels and 360 video. Used html2canvas to create a gaze-controlled UI system which allows the user to navigate through each section and use the app’s features. ",
-            "url": "",
+            "url": "https://www.rnib.org.uk/living-with-sight-loss/assistive-aids-and-technology/eyeware/",
             "tags": [
                 {
                     "copy": "WebAR",

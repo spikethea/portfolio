@@ -28,7 +28,6 @@ const HamburgerNavigation = () => {
         <nav role="navigation" className={`${isHidden ? 'hidden': null}`}>
           <ul className="links">
             <li><a href="/">Home</a></li>
-            <li><a href="/">Projects</a></li>
             <li><a href="/contact-me">Contact</a></li>
           </ul>
           <ul className="social-media">
