@@ -45,7 +45,6 @@ export interface Video {
 }
 
 const ProjectEntry = ({projectData, setTitle}: projectProps) => {
-
   const [video, setVideo] = useState();
   const [images, setImages] = useState(projectData.thumbnail_images);
   const imagesRef = useRef([]);
@@ -113,19 +112,19 @@ const ProjectEntry = ({projectData, setTitle}: projectProps) => {
     //triggerImageShow(self)
   }
 
-  const triggerImageShow = (self: HTMLElement) => {
-    const imagesArray = self.querySelectorAll('img');
-    const video = self.querySelector<HTMLVideoElement>('video');
+  // const triggerImageShow = (self: HTMLElement) => {
+  //   const imagesArray = self.querySelectorAll('img');
+  //   const video = self.querySelector<HTMLVideoElement>('video');
 
-    for (let i = 0; i < imagesArray.length; i++) {
-      imagesArray[i].style.display = 'block';
-      imagesArray[i].style.visibility = 'visible';
-    }
+  //   for (let i = 0; i < imagesArray.length; i++) {
+  //     imagesArray[i].style.display = 'block';
+  //     imagesArray[i].style.visibility = 'visible';
+  //   }
 
-    if (video && !video.paused) {
-      video.pause();
-    }
-  }
+  //   if (video && !video.paused) {
+  //     video.pause();
+  //   }
+  // }
 
   // const triggerImageAnimation = (self: HTMLElement) => {
   //   const imagesArray = self.querySelectorAll('img');
@@ -182,6 +181,7 @@ const ProjectEntry = ({projectData, setTitle}: projectProps) => {
             loop
             ref={videoRef}
             src={project.video.src}
+            preload='metadata'
           ></video>
           {images.map((image, index: number) => {
 

@@ -3,11 +3,13 @@ import '../../globals.scss';
 import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import { Canvas, useFrame, useGraph, useLoader, useThree } from '@react-three/fiber'
 import { Html, Loader, useProgress } from '@react-three/drei';
+import tunnel from 'tunnel-rat';
+
 import SkyBox from './SkyBox';
 import Screen from './Screen';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import * as THREE from "three";
-import { VRButton,  XR } from '@react-three/xr'
+import '../../globals.scss';
 import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
 
 
@@ -116,28 +118,44 @@ function Camera() {
   )
 }
 
-export default function WebGLCanvas () {
+const ui = tunnel();
 
-  const [ vrControllers, setVrControllers ] = useState(null);
-  const [XRButton, setXRButton] = useState<HTMLElement>();
+function SplashScreen({ui}: {ui: any}) {
+  
+  const { active, progress, errors, item, loaded, total } = useProgress()
 
-  useEffect(() => {
-    return () => {
-      XRButton?.remove();
-    }
-  }, [])
+  return <ui.In>
+    <div className={`splash-screen ${progress === Math.floor(100) ? 'hidden': null}`}>
+      <progress id="loading-bar" value={Number(progress)} max={100}></progress>
+      <p>{Math.floor(progress)}% loaded</p>
+  </div>
+  </ui.In>
+}
+
+export default function WebGLCanvas ({ui}: {ui: any}) {
+
+  // const [ vrControllers, setVrControllers ] = useState(null);
+  // const [XRButton, setXRButton] = useState<HTMLElement>();
+
+  // useEffect(() => {
+  //   return () => {
+  //     XRButton?.remove();
+  //   }
+  // }, [])
 
     return (
       <>
+      
         {/* <VRButton
          onError={(e) => console.error(e)}
          id='VRButton'
         /> */}
+        <SplashScreen ui={ui}/>
+        <Suspense>
         <Canvas
         style={{flex: '1'}}
         shadows={'soft'}
         >
-          <Suspense>
             <Camera/>
             {/* <fogExp2 color={0x2d4861} attach="fog" density={2}/> */}
             {/* <fog attach="fog" args={[0x9cdbff, 10, 250]}/> */}
@@ -165,10 +183,9 @@ export default function WebGLCanvas () {
             <Building rotation={[0, -Math.PI/2, 0]} position={[0, -5, -80]} />
             <Building rotation={[0, -Math.PI/2, 0]} position={[40, -5, -80]} />
 
-            <Screen position={[-10, -4, -20]} rotation={[0, Math.PI*0.2, 0]}/>
-            </Suspense>
-        </Canvas>
-        <Loader/>
+            <Screen position={[-13, -4, -16]} rotation={[0, Math.PI*0.2, 0]}/>
+          </Canvas>
+        </Suspense>
       </>
     )
 }

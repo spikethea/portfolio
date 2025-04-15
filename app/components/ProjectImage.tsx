@@ -24,16 +24,26 @@ interface projectImageProps {
 }
 
 const ProjectImage = ({imageData}: projectImageProps) => {
+    const MEDIA_BREAKPOINT_MEDIUM = 820;
     const containerRef = useRef(null);
     const entry = useIntersectionObserver(containerRef, {
         threshold: imageData.isTall ? 0.3 : 0.9
-    })
+    });
+    const [screenWidth, setScreenWidth] = useState(0);
     // const [isVisible, setIsVisible] = useState(false);
 
     // const callbackFunction = (entries: Array<IntersectionObserverEntry>) => {
     //     const [entry] = entries;
     //     setIsVisible(entry.isIntersecting);
     // }
+
+    useEffect(()=> {
+        setScreenWidth(window.innerWidth);
+
+        document.addEventListener('resize', ()=> {
+            setScreenWidth(window.innerWidth);
+        })
+    }, [])
 
     const determineClassName = () => {
         let gridSpaces = '';
@@ -74,7 +84,7 @@ const ProjectImage = ({imageData}: projectImageProps) => {
         <section ref={containerRef} className={determineClassName()}>
             <img className="bg-image" src={imageData.src}/>
             {/* <h3>England Football Learning</h3> */}
-            {imageData.caption ? <p className={entry?.isIntersecting ? '': 'hidden'}>{imageData.caption}</p>: null}
+            {imageData.caption ? <p className={entry?.isIntersecting || screenWidth > MEDIA_BREAKPOINT_MEDIUM ? '': 'hidden'}>{imageData.caption}</p>: null}
         </section>
     )
 }

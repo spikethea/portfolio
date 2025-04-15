@@ -4,7 +4,7 @@
             "id": 0,
             "name": "rnib-eyeware",
             "tagName": "RNIB: Eyeware 2.0",
-            "subtitle": "Employed at Zappar, Developed a Mixed Reality Web application Eyeware 2.0 app for use in the Royal National Insitute of the Blind (RNIB). Additionally created a parallel WebAR version.",
+            "subtitle": "Employed at Zappar, I Developed a Mixed Reality Web application Eyeware 2.0 app for use in the Royal National Insitute of the Blind (RNIB). Additionally created a parallel WebAR version.",
             "description": "Developed a single-page webAR app involved using the three.js implementation of Universal AR library in typescript. Developed a 3D stereoscopic view which allows users to go through a simulation eye conditions in tasks, levels and 360 video. Used html2canvas to create a gaze-controlled UI system which allows the user to navigate through each section and use the app’s features. ",
             "url": "https://www.rnib.org.uk/living-with-sight-loss/assistive-aids-and-technology/eyeware/",
             "tags": [
@@ -146,7 +146,7 @@
                 {
                     "id": 3,
                     "src": "/efl-css-grid.png",
-                    "caption": "I re-engineered the existing design system for Index Pages. The design updates based on CMS content changes and the filter component, so I used CSS grid and javascript to dynamically manipulate classes.",
+                    "caption": "I re-engineered the existing design system for Index Pages. The design updates based on CMS content changes and the filter component. I utilised CSS Grid and Javascript to create a dynamic Grid system.",
                     "isTall": false,
                     "howManySpaces": 1
                 }
