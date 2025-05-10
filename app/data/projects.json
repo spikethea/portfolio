@@ -243,13 +243,6 @@
                     "caption": "The UI was designed so the user could use/view the ui while the 3D scene is accessible. e.g. Information Box, and the archive page/allergen form utilising the laptop/desktop screen width.",
                     "isTall": false,
                     "howManySpaces": 1
-                },
-                {
-                    "id": 2,
-                    "src": "/servicelearn-allergen-fullscreen.jpg",
-                    "caption": "The UI was designed so the user could use/view the ui while the 3D scene is accessible. e.g. Information Box, and the archive page/allergen form utilising the laptop/desktop screen width.",
-                    "isTall": false,
-                    "howManySpaces": 2
                 }
             ]
         },

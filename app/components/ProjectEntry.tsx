@@ -175,14 +175,16 @@ const ProjectEntry = ({projectData, setTitle}: projectProps) => {
         onMouseOut={(e) => OnProjectLeave(e, ref, videoRef)}
         >
           <div className={`${styles.mobile_title} ${entry?.isIntersecting ? '' : `${styles.hidden}`}`}>{projectData.name}</div>  
-          <video 
-            muted 
-            playsInline
-            loop
-            ref={videoRef}
-            src={project.video.src}
-            preload='metadata'
-          ></video>
+          <div className={styles.video_container}>
+            <video 
+              muted 
+              playsInline
+              loop
+              ref={videoRef}
+              src={project.video.src}
+              preload='metadata'
+            ></video>
+          </div>
           {images.map((image, index: number) => {
 
             const {yPos, xPos} = image

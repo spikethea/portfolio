@@ -224,11 +224,16 @@ nav {
   bottom: 0;
   display: flex;
   flex-direction: column;
-  .links li {
-    display: flex;
-    gap: 2rem;
+  .links {
+    
 
-    a {
+    li {
+      display: flex;
+      gap: 2rem;
+    }
+
+    li a, .drop-down header {
+      cursor: pointer;
       width: 100%;
       padding: 1.6rem 3.2rem;
       color: rgb(0, 0, 0);
@@ -237,7 +242,34 @@ nav {
       &:hover {
         background-color: black;
         color: white;
-        
+        img {
+          filter: invert(1);
+        }
+      }
+    }
+
+    .drop-down {
+      header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        img {
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+
+      ul {
+        background-color: rgb(219, 219, 219);
+        max-height: 395px;
+        transition: max-height 0.3s ease-in-out;
+        &.hidden {
+          
+          max-height: 0;
+          pointer-events: none;
+          overflow: hidden;
+        }
       }
     }
   }
@@ -304,6 +336,18 @@ nav {
   position: relative;
   display: flex;
 
+  .rfm-marquee-container {
+    font-weight: 300;
+    font-size: 1.5rem;
+    pointer-events: none;
+    letter-spacing: 0.2em;
+    background: white;
+    --pause-on-hover: running;
+    --pause-on-click: running;
+    --transform: none;
+    --width: 100%;
+  }
+
   video {
     filter: brightness(0.5);
   }
@@ -366,6 +410,18 @@ h2 {
 // }
 
 // Content
+
+.rfm-marquee-container {
+  font-weight: 300;
+  font-size: 1.5rem;
+  pointer-events: none;
+  letter-spacing: 0.2em;
+  background: white;
+  --pause-on-hover: running;
+  --pause-on-click: running;
+  --transform: none;
+  --width: 100%;
+}
 
 .content-container {
   display: flex;
@@ -650,6 +706,8 @@ h2 {
 
   
   .rfm-marquee-container {
+    font-weight: 300;
+    font-size: 1.5rem;
     --pause-on-hover: running;
     --pause-on-click: running;
     width: 95% !important;

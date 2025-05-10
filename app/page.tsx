@@ -47,14 +47,14 @@ export default function Home() {
       <section className={styles.hero_section}>
         <WebGLCanvas ui={ui}/>
         {/* <img src="/palm_tree.png" alt="Render of Palm Tree" /> */}
-        <h1 onClick={() => document.getElementById('software-developer')?.scrollIntoView()}>QuinceGR</h1>
+        <h1  onClick={() => document.getElementById('software-developer')?.scrollIntoView()}>QuinceGR</h1>
       </section>
       <div className={styles.content_container}>
         <Marquee>
-            <h2> UNITY 3D | REACTJS (HOOKS + REDUX) | WEBGL | AUGMENTED & VIRTUAL REALITY | ES6 JAVASCRIPT | DESIGN AND UX | 3D MODELLING &amp; ANIMATION | </h2>
+            <p> UNITY 3D | REACTJS (HOOKS + REDUX) | WEBGL | AUGMENTED & VIRTUAL REALITY | ES6 JAVASCRIPT | DESIGN AND UX | 3D MODELLING &amp; ANIMATION | </p>
         </Marquee>
+        <h2 id="software-developer">Software Developer</h2>
         <section className={styles.content_container__inner}>
-          <h2 id="software-developer">Software Developer</h2>
           {projectData?.map((project, id) => (
             <ProjectEntry key={id} setTitle={setTitle} projectData={project}/>
           ))}
